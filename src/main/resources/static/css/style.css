@@ -1,0 +1,8 @@
+a{cursor: pointer;}
+
+/* RESPONSIVIDADES */
+@media screen and (max-width:667px){
+    .wm{width:100%;}
+    nav{height: 100%;}
+    .neo-container{margin-top: 120px;}
+}
