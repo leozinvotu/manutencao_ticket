@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form action="/administrador/login_adm"></form>
+<form action="/login" th:object="${administrador}"></form>
 <a class="nav-item nav-link btn-danger">Sair</a>
 </body>
 </html>
