@@ -1,4 +1,6 @@
 a{cursor: pointer;}
+a.btn-nav{color: #000000}
+a.btn-nav:hover{color: #000000}
 
 /* RESPONSIVIDADES */
 @media screen and (max-width:667px){

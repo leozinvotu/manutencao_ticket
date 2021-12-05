@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
-    <title>Home</title>
+    <title>Pagina Inicial</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="author" content="Thomas Souza"/>
     <script src="https://kit.fontawesome.com/006642858d.js"></script>
@@ -20,10 +20,8 @@
                     <img src="img/logo.png" height="50" width="50"></a>
 
                 <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                    <a class="btn-nav nav-item nav-link"><i class="fas fa-user"></i>Usuário</a>
-                    <a class="btn-nav nav-item nav-link"><i class="fas fa-tools"></i>Funcionário Manutenção</a>
-                    <a class="btn-nav nav-item nav-link"><i class="fas fa-comment"></i>Atendente</a>
-                    <a class="btn-nav nav-item nav-link" th:href="@{administrador/login}"><i class="fas fa-crown"></i>Administrador</a>
+                    <a class="btn-nav nav-item nav-link" href="/cadastro_administrador"><i class="fas fa-user"></i>Login</a>
+                    <a class="btn-nav nav-item nav-link" href="/home" th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}"><i class="fas fa-user"></i>Home</a>
                 </nav>
             </div>
         </header>
