@@ -27,9 +27,4 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping("/cadastro_administrador")
-    public String cadastro_administrador()
-    {
-        return "cadastro_administrador";
-    }
 }

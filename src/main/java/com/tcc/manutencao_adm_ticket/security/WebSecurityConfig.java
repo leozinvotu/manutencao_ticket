@@ -62,8 +62,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/home").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "/cadastrar_administrador").hasRole("ADMIN")
                 .anyRequest().authenticated()
-                .and().formLogin().permitAll()
-                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+                .and().formLogin().loginPage("/login").permitAll()
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .and().exceptionHandling().accessDeniedPage("/login?error");
 
     }
 
