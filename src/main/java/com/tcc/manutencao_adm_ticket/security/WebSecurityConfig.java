@@ -59,13 +59,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/").permitAll()
-                .antMatchers(HttpMethod.GET, "/home").hasRole("ADMIN")
-                .antMatchers(HttpMethod.POST, "/cadastrar_administrador").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/home").authenticated()
+                .antMatchers(HttpMethod.GET, "/cadastrar_usuario").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.POST, "/cadastrar_usuario").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").permitAll()
+                .and().formLogin().loginPage("/index").defaultSuccessUrl("/home", true)
+                    .failureUrl("/login?error")
+                    .permitAll()
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .and().exceptionHandling().accessDeniedPage("/login?error");
-
+                    .permitAll().logoutSuccessUrl("/index")
+                .and().exceptionHandling().accessDeniedPage("/403");
     }
 
     @Override

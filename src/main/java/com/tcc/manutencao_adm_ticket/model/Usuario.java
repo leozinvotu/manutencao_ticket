@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Data
@@ -44,16 +45,26 @@ public class Usuario implements UserDetails {
     @Column(name = "senha")
     private String senha;
 
-    @ManyToMany
-    @JoinTable(name = "usuario_role",
-            joinColumns = @JoinColumn(name = "email_usuario"),
-            inverseJoinColumns = @JoinColumn(name = "nome_role"))
-    private Collection<Role> roles;
+//    @ManyToMany
+//    @JoinTable(name = "usuario_role",
+//            joinColumns = @JoinColumn(name = "email_usuario"),
+//            inverseJoinColumns = @JoinColumn(name = "nome_role"))
+//    private Collection<Role> roles;
+
+    @ManyToOne
+    @JoinColumn(name="nome_role", nullable=false)
+    private Role role;
+
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        // TODO Auto-generated method stub
+//        return (Collection<? extends GrantedAuthority>) this.role;
+//    }
 
     @Override
+
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        return (Collection<? extends GrantedAuthority>) this.roles;
+        return Arrays.asList(this.role);
     }
 
     @Override

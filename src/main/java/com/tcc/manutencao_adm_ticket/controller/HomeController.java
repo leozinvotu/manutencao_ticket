@@ -1,30 +1,62 @@
 package com.tcc.manutencao_adm_ticket.controller;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+
 
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public ModelAndView index(){
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("home/index");
-        return mv;
+    @RequestMapping("/")
+    public String tela_index()
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication == null || authentication instanceof AnonymousAuthenticationToken)
+        {
+            return "index";
+        }
+        return "home";
+    }
+
+    @RequestMapping("/index")
+    public String index()
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication == null || authentication instanceof AnonymousAuthenticationToken)
+        {
+            return "index";
+        }
+        return "home";
     }
 
     @RequestMapping("/login")
     public String login()
     {
-        return "login";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication == null || authentication instanceof AnonymousAuthenticationToken)
+        {
+            return "login";
+        }
+        return "home";
     }
 
     @RequestMapping("/home")
     public String home()
     {
         return "home";
+    }
+
+    @RequestMapping("/cadastro_usuario")
+    public String cadastro_admin()
+    {
+        return "administrador/cadastro_usuario";
     }
 
 }

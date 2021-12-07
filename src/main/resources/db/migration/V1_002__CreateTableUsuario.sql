@@ -6,5 +6,7 @@ create table usuario(
 	telefone varchar(40) NOT NULL,
 	email_usuario varchar(50) NOT NULL,
 	senha varchar(100) NOT NULL,
-	constraint pk_usuario primary key(email_usuario)
+	nome_role varchar(30) NOT NULL,
+	constraint pk_usuario primary key(email_usuario),
+	constraint fk_role foreign key(nome_role) references role(nome_role)
 );

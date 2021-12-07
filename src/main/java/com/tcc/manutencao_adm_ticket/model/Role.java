@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -21,8 +22,9 @@ public class Role implements GrantedAuthority {
     @Column(name = "nome_role")
     private String role;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<Usuario> usuarios;
+//    @ManyToMany(mappedBy = "roles")
+//    private Collection<Usuario> usuarios;
+
 
     @Override
     public String getAuthority() {

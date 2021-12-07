@@ -2,12 +2,9 @@ package com.tcc.manutencao_adm_ticket.security;
 
 import javax.transaction.Transactional;
 
-import com.tcc.manutencao_adm_ticket.model.Role;
 import com.tcc.manutencao_adm_ticket.model.Usuario;
 import com.tcc.manutencao_adm_ticket.repositorio.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
