@@ -53,10 +53,5 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping("/cadastro_usuario")
-    public String cadastro_admin()
-    {
-        return "administrador/cadastro_usuario";
-    }
 
 }

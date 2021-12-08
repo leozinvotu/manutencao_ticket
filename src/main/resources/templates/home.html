@@ -29,11 +29,11 @@
                     <ul class="navbar-nav navbar-dark bg-dark justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home">Página Inicial</a>
-                            <a class="nav-link active" aria-current="page" href="/cadastro_ticket" sec:authorize="hasAuthority('USER')">Cadastrar Ticket</a>
+                            <a class="nav-link active" aria-current="page" href="/cadastrar_ticket" sec:authorize="hasAuthority('USER')">Cadastrar Ticket</a>
                             <a class="nav-link active" aria-current="page" href="/listar_ticket" sec:authorize="hasAuthority('USER')">Listar Ticket</a>
                             <a class="nav-link active" aria-current="page" href="/verificar_ticket" sec:authorize="hasAuthority('ATENDENTE')">Tickets Solicitados</a>
                             <a class="nav-link active" aria-current="page" href="/verificar_manutencao" sec:authorize="hasAuthority('MANUTENCAO')">Manutenções Solicitadas</a>
-                            <a class="nav-link active" aria-current="page" href="/cadastro_usuario" sec:authorize="hasAuthority('ADMIN')">Cadastrar Usuário</a>
+                            <a class="nav-link active" aria-current="page" href="/cadastrar_usuario" sec:authorize="hasAuthority('ADMIN')">Cadastrar Usuário</a>
                             <a class="nav-link active" aria-current="page" href="/listar_usuario" sec:authorize="hasAuthority('ADMIN')">Listar Usuários</a>
                             <a class="nav-link active" aria-current="page" href="/alterar_senha">Alterar Senha</a>
                         </li>

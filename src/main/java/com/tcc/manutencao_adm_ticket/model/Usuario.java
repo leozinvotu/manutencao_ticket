@@ -25,6 +25,7 @@ public class Usuario implements UserDetails {
     @Column(name = "estado")
     private String estado;
 
+    @NotNull
     @Column(name = "cidade")
     private String cidade;
 
@@ -55,14 +56,7 @@ public class Usuario implements UserDetails {
     @JoinColumn(name="nome_role", nullable=false)
     private Role role;
 
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        // TODO Auto-generated method stub
-//        return (Collection<? extends GrantedAuthority>) this.role;
-//    }
-
     @Override
-
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(this.role);
     }
