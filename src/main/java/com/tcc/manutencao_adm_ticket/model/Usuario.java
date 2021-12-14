@@ -3,6 +3,7 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,6 +17,10 @@ import java.util.Collection;
 @Entity
 @Table(name = "usuario")
 public class Usuario implements UserDetails {
+
+    @Id
+    @Column(name = "email_usuario")
+    private String email;
 
     @NotNull
     @Column(name = "nome")
@@ -37,11 +42,6 @@ public class Usuario implements UserDetails {
     @Column(name = "telefone")
     private String telefone;
 
-    @Id
-    @NotNull
-    @Column(name = "email_usuario")
-    private String email;
-
     @NotNull
     @Column(name = "senha")
     private String senha;
@@ -52,7 +52,7 @@ public class Usuario implements UserDetails {
 //            inverseJoinColumns = @JoinColumn(name = "nome_role"))
 //    private Collection<Role> roles;
 
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="nome_role", nullable=false)
     private Role role;
 
@@ -96,4 +96,5 @@ public class Usuario implements UserDetails {
         // TODO Auto-generated method stub
         return true;
     }
+
 }

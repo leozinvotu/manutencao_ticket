@@ -6,21 +6,39 @@
   border-color: #ffffff;
 }
 
+.container
+{
+    width: 100%;
+    padding-top: 10%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 860px;
+}
+
+.custom-input
+{
+    width: 45%;
+}
+
 .container-cadastro
 {
     width: 100%;
-    max-width: 600px;
-    padding-top: 10%;
+    padding-top: 5%;
+    margin:auto;
+    max-width: 1000px;
+    min-width: 860px;
 }
 
 
-body {
+
+/*body {
   display: flex;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
 
-}
+}*/
+
 .form-signin {
   width: 100%;
   margin: auto;
@@ -55,18 +73,51 @@ body {
     border-top-right-radius: 0;
     background-color: #f5f5f5;
 }
+
+.btn-redirect
+{
+    padding: 4px 20px;
+    color: white;
+    background-color: green;
+    border: 2px solid #2F4F4F;
+    text-decoration: none;
+
+}
+.btn-redirect:hover
+{
+    padding: 4px 20px;
+    color: white;
+    background-color: #2E8B57;
+    border-color: green;
+    text-decoration: none;
+    box-shadow: 1px 1px green;
+}
+
 .btn-voltar
 {
-    padding: 5px 20px;
+    padding: 3px 20px;
     color: black;
     background-color: gold;
     border-color: gold;
     text-decoration: none;
-    box-shadow: 1px 1px darkgoldenrod;
+    border: 2px solid darkgoldenrod;
 }
+.btn-voltar:hover
+{
+    background-color: darkgoldenrod;
+    color: black;
+    border-color: darkgoldenrod;
+}
+
 .btn-enviar
 {
 	background-color: green;
+	color: white;
+	border-color: green;
+}
+.btn-enviar:hover
+{
+	background-color: #2E8B57;
 	color: white;
 	border-color: green;
 }
@@ -77,3 +128,10 @@ body {
     color: white;
     border-color: red;
 }
+.btn-cancelar:hover
+{
+    background-color: #8B0000;
+    color: white;
+    border-color: red;
+}
+
